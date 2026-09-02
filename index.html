@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#185FA5">
+<meta name="description" content="ECRO 2026 poster by Moritz Engelhardt — Beyond Smell Loss">
+<title>Beyond Smell Loss · ECRO 2026</title>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --bg: #F5F8FC;
+    --surface: #FFFFFF;
+    --blue: #185FA5;
+    --blue-dark: #0C447C;
+    --blue-light: #E8F2FB;
+    --blue-soft: #BBD7F2;
+    --text: #14233A;
+    --text-muted: #5A6B80;
+    --text-faint: #98A7B8;
+    --border: #E1E9F2;
+
+    /* subtle Paris accent */
+    --accent: #C96F5B;
+  }
+
+  html {
+    background: var(--bg);
+  }
+
+  body {
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont,
+      "Segoe UI", Helvetica, Arial, sans-serif;
+    background:
+      radial-gradient(
+        circle at 85% 3%,
+        rgba(24, 95, 165, 0.08),
+        transparent 28%
+      ),
+      var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    padding: 20px 16px 32px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .page {
+    width: 100%;
+    max-width: 430px;
+    margin: 0 auto;
+  }
+
+  /* ─────────────────────────
+     HEADER
+  ───────────────────────── */
+
+  .top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .top-logo {
+    width: 38px;
+    height: 38px;
+    border-radius: 11px;
+    background: var(--blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 14px rgba(24, 95, 165, 0.18);
+  }
+
+  .top-logo svg {
+    width: 21px;
+    height: 21px;
+  }
+
+  .top-meta {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .top-institute {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--blue);
+    line-height: 1.2;
+  }
+
+  .top-parent {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 3px;
+  }
+
+  .paris-mark {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-muted);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  }
+
+  .paris-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  /* ─────────────────────────
+     HERO
+  ───────────────────────── */
+
+  .hero {
+    position: relative;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 18px;
+    box-shadow: 0 8px 30px rgba(20, 35, 58, 0.05);
+  }
+
+  .hero-pattern {
+    position: absolute;
+    top: -70px;
+    right: -70px;
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    background:
+      radial-gradient(
+        circle,
+        rgba(24, 95, 165, 0.11) 0,
+        rgba(24, 95, 165, 0.04) 42%,
+        transparent 70%
+      );
+    pointer-events: none;
+  }
+
+  .hero-pattern::before,
+  .hero-pattern::after {
+    content: "";
+    position: absolute;
+    border: 1px solid rgba(24, 95, 165, 0.10);
+    border-radius: 50%;
+  }
+
+  .hero-pattern::before {
+    width: 125px;
+    height: 125px;
+    top: 32px;
+    left: 32px;
+  }
+
+  .hero-pattern::after {
+    width: 75px;
+    height: 75px;
+    top: 57px;
+    left: 57px;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 18px 18px 20px;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+    color: var(--blue-dark);
+    background: var(--blue-light);
+    border-radius: 7px;
+    padding: 6px 9px;
+    margin-bottom: 13px;
+  }
+
+  .hero-badge svg {
+    width: 10px;
+    height: 10px;
+  }
+
+  .hero-title {
+    font-size: 27px;
+    font-weight: 650;
+    line-height: 1.12;
+    letter-spacing: -0.7px;
+    margin-bottom: 9px;
+    max-width: 330px;
+  }
+
+  .hero-subtitle {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.58;
+    margin-bottom: 15px;
+  }
+
+  .author-block {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .author-photo {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 8px rgba(20, 35, 58, 0.12);
+}
+
+  .author-info {
+    min-width: 0;
+  }
+
+  .author-name {
+    font-size: 12px;
+    font-weight: 650;
+    line-height: 1.35;
+  }
+
+  .affil {
+    font-size: 10.5px;
+    color: var(--text-muted);
+    line-height: 1.45;
+    margin-top: 2px;
+  }
+
+  /* ─────────────────────────
+     POSTER PREVIEW
+  ───────────────────────── */
+
+  .poster-preview {
+    margin: 0 12px 12px;
+    border-radius: 13px;
+    overflow: hidden;
+    background: #E9EEF4;
+    border: 1px solid var(--border);
+    position: relative;
+  }
+
+  .poster-preview img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 0.707 / 1;
+    object-fit: cover;
+    object-position: top center;
+  }
+
+  .poster-overlay {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 9px;
+    border-radius: 7px;
+    background: rgba(20, 35, 58, 0.84);
+    color: #fff;
+    font-size: 9px;
+    font-weight: 650;
+    letter-spacing: 0.5px;
+  }
+
+  /* ─────────────────────────
+     SECTION LABEL
+  ───────────────────────── */
+
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin: 0 0 9px 3px;
+  }
+
+  .section-label::before {
+    content: "";
+    width: 14px;
+    height: 1px;
+    background: var(--blue-soft);
+  }
+
+  /* ─────────────────────────
+     RESOURCE BUTTONS
+  ───────────────────────── */
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+
+  .btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 13px 14px;
+    border-radius: 13px;
+    text-decoration: none;
+    font-size: 13.5px;
+    font-weight: 550;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition:
+      transform 0.12s ease,
+      box-shadow 0.12s ease,
+      background 0.12s ease;
+  }
+
+  .btn:active {
+    transform: scale(0.985);
+  }
+
+  .btn-primary {
+    background: var(--blue);
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(24, 95, 165, 0.22);
+  }
+
+  .btn-primary:hover {
+    box-shadow: 0 7px 20px rgba(24, 95, 165, 0.27);
+  }
+
+  .btn-primary .icon-wrap {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+  }
+
+  .btn-secondary {
+    background: var(--surface);
+    color: var(--text);
+    border-color: var(--border);
+  }
+
+  .btn-secondary:hover {
+    background: var(--blue-light);
+  }
+
+  .btn-secondary .icon-wrap {
+    background: var(--blue-light);
+    color: var(--blue);
+  }
+
+  .icon-wrap {
+    width: 35px;
+    height: 35px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .icon-wrap svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .btn-body {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .btn-label {
+    display: block;
+    line-height: 1.3;
+  }
+
+  .btn-sub {
+    display: block;
+    font-size: 10.5px;
+    font-weight: 400;
+    opacity: 0.65;
+    margin-top: 2px;
+    line-height: 1.3;
+  }
+
+  .btn-arrow {
+    font-size: 16px;
+    opacity: 0.4;
+    flex-shrink: 0;
+  }
+
+  .btn-primary .btn-arrow {
+    opacity: 0.65;
+  }
+
+  .pill-tag {
+    display: inline-block;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: rgba(255, 255, 255, 0.18);
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-bottom: 3px;
+  }
+
+  /* ─────────────────────────
+     CONTACT
+  ───────────────────────── */
+
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 22px 0 17px;
+  }
+
+  .contact-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+
+  .mail-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 14px;
+    text-decoration: none;
+    font-size: 11.5px;
+    color: var(--blue);
+    border-bottom: 1px solid var(--border);
+    transition: background 0.1s ease;
+    overflow: hidden;
+  }
+
+  .mail-row:hover {
+    background: var(--blue-light);
+  }
+
+  .mail-row svg {
+    flex-shrink: 0;
+  }
+
+  .mail-address {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .vcard-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 14px;
+    text-decoration: none;
+    font-size: 12.5px;
+    font-weight: 650;
+    letter-spacing: 0.1px;
+    color: #fff;
+    background: var(--blue);
+    transition: filter 0.12s ease;
+  }
+
+  .vcard-row:hover {
+    filter: brightness(1.08);
+  }
+
+  .vcard-row:active {
+    filter: brightness(0.95);
+  }
+
+  .vcard-row svg {
+    flex-shrink: 0;
+  }
+
+  .social-row {
+    display: flex;
+  }
+
+  .social-btn {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 12px 5px;
+    text-decoration: none;
+    font-size: 10.5px;
+    font-weight: 550;
+    color: var(--text-muted);
+    border-right: 1px solid var(--border);
+    transition:
+      background 0.1s ease,
+      color 0.1s ease;
+    white-space: nowrap;
+  }
+
+  .social-btn:last-child {
+    border-right: none;
+  }
+
+  .social-btn:hover {
+    background: var(--blue-light);
+    color: var(--blue);
+  }
+
+  .social-btn svg {
+    opacity: 0.65;
+    flex-shrink: 0;
+  }
+
+  /* ─────────────────────────
+     FOOTER
+  ───────────────────────── */
+
+  .footer {
+    margin-top: 23px;
+    text-align: center;
+  }
+
+  .footer-note {
+    font-size: 9.5px;
+    color: var(--text-faint);
+    line-height: 1.65;
+  }
+
+  .footer-event {
+    color: var(--text-muted);
+    font-weight: 550;
+  }
+
+  .footer-links {
+    margin-top: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: 10px;
+  }
+
+  .footer-links a {
+    color: var(--text-faint);
+    text-decoration: none;
+  }
+
+  .footer-links a:hover {
+    color: var(--blue);
+    text-decoration: underline;
+  }
+
+  .footer-links .sep {
+    color: var(--border);
+  }
+
+  /* ─────────────────────────
+     SMALL PHONES
+  ───────────────────────── */
+
+  @media (max-width: 360px) {
+    body {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+
+    .hero-title {
+      font-size: 24px;
+    }
+
+    .hero-subtitle {
+      font-size: 12.5px;
+    }
+
+    .social-btn {
+      font-size: 9.5px;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="top-bar">
+
+    <div class="brand">
+
+      <div class="top-logo">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#fff"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M9 3H5a2 2 0 0 0-2 2v4"/>
+          <path d="M9 21H5a2 2 0 0 1-2-2v-4"/>
+          <path d="M15 3h4a2 2 0 0 1 2 2v4"/>
+          <path d="M15 21h4a2 2 0 0 0 2-2v-4"/>
+          <circle cx="12" cy="12" r="3"/>
+        </svg>
+      </div>
+
+      <div class="top-meta">
+        <div class="top-institute">ECRO 2026</div>
+        <div class="top-parent">European Chemoreception Research Organization</div>
+      </div>
+
+    </div>
+
+    <div class="paris-mark">
+      <span class="paris-dot"></span>
+      Paris
+    </div>
+
+  </header>
+
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <div class="hero-pattern"></div>
+
+    <div class="hero-content">
+
+      <div class="hero-badge">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+          <path d="M2 17l10 5 10-5"/>
+          <path d="M2 12l10 5 10-5"/>
+        </svg>
+        Poster S5-P21
+      </div>
+
+      <h1 class="hero-title">
+        Beyond Smell Loss
+      </h1>
+
+      <p class="hero-subtitle">
+        Cognitive and affective alterations in post-COVID
+        olfactory dysfunction and implications for digital rehabilitation
+      </p>
+
+      <div class="author-block">
+
+  <img
+    src="profile.jpg"
+    alt="Moritz Engelhardt"
+    class="author-photo"
+  >
+
+  <div class="author-info">
+    <div class="author-name">
+      Moritz Engelhardt
+    </div>
+
+    <div class="affil">
+      FAU Erlangen-Nürnberg · University Hospital Erlangen
+    </div>
+  </div>
+
+</div>
+
+    </div>
+
+
+    <!-- POSTER PREVIEW
+         Put poster-preview.jpg in the same folder.
+         If you don't want a preview, remove this entire block.
+    -->
+    <div class="poster-preview">
+
+      <img
+        src="poster-preview.jpg"
+        alt="Preview of the ECRO 2026 poster Beyond Smell Loss"
+      >
+
+      <div class="poster-overlay">
+        <svg
+          width="12"
+          height="12"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <circle cx="11" cy="11" r="7"/>
+          <path d="m20 20-4-4"/>
+        </svg>
+        Poster preview
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- RESOURCES -->
+  <div class="section-label">
+    Explore the research
+  </div>
+
+  <div class="links">
+
+    <!-- MAIN CTA -->
+      <a
+      href="https://www.rhinologyjournal.com/Abstract.php?id=3511"
+        class="btn btn-primary"
+       target="_blank"
+      rel="noopener noreferrer"
+    >
+
+      <div class="icon-wrap">
+
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          
+
+          <path d="M4 4h16v16H4z"/>
+
+<path d="M8 8h8"/>
+
+<path d="M8 12h8"/>
+
+<path d="M8 16h5"/>
+        </svg>
+
+      </div>
+
+      <div class="btn-body">
+
+        <span class="pill-tag">
+          Published
+        </span>
+
+        <span class="btn-label">
+          View publication
+        </span>
+
+        <span class="btn-sub">
+          Rhinology Journal · Full article
+        </span>
+
+      </div>
+
+      <span class="btn-arrow">↗</span>
+
+    </a>
+
+    <!-- MAIN CTA -->
+        <a href="ECRO2026_Paris.pdf" class="btn btn-secondary">
+
+
+      <div class="icon-wrap">
+
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <line x1="12" y1="12" x2="12" y2="18"/>
+          <line x1="9" y1="15" x2="15" y2="15"/>
+        </svg>
+
+      </div>
+
+      <div class="btn-body">
+
+        <span class="btn-label">
+          Poster PDF
+        </span>
+
+        <span class="btn-sub">
+          High quality · A0
+        </span>
+
+      </div>
+
+      <span class="btn-arrow">↗</span>
+
+    </a>
+
+    <!-- ABSTRACT -->
+    <a
+      href="https://www.ecro.online/meetings/paris-2026/"
+      class="btn btn-secondary"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+
+      <div class="icon-wrap">
+
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <rect x="3" y="4" width="18" height="18" rx="2"/>
+          <line x1="16" y1="2" x2="16" y2="6"/>
+          <line x1="8" y1="2" x2="8" y2="6"/>
+          <line x1="3" y1="10" x2="21" y2="10"/>
+        </svg>
+
+      </div>
+
+      <div class="btn-body">
+
+        <span class="btn-label">
+          Conference abstract
+        </span>
+
+        <span class="btn-sub">
+          ECRO 2026 website
+        </span>
+
+      </div>
+
+      <span class="btn-arrow">↗</span>
+
+    </a>
+
+  </div>
+
+
+  <!-- CONTACT -->
+  <div class="divider"></div>
+
+  <div class="section-label">
+    Let's connect
+  </div>
+
+  <div class="contact-card">
+
+    <!-- EMAIL -->
+    <a
+      href="mailto:moritz.me.engelhardt@fau.de"
+      class="mail-row"
+    >
+
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="#185FA5"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+        <polyline points="22,6 12,13 2,6"/>
+      </svg>
+
+      <span class="mail-address">
+        moritz.me.engelhardt@fau.de
+      </span>
+
+    </a>
+
+
+    <!-- VCARD -->
+    <a
+      href="data:text/vcard;base64,QkVHSU46VkNBUkQNClZFUlNJT046My4wDQpOOkVuZ2VsaGFyZHQ7TW9yaXR6Ozs7DQpGTjpNb3JpdHogRW5nZWxoYXJkdA0KVElUTEU6UGhEIHN0dWRlbnQNCk9SRzpVbml2ZXJzaXR5IENsaW5pYyBFcmxhbmdlbg0KRU1BSUw7VFlQRT1JTlRFUk5FVCxXT1JLOm1vcml0ei5tZS5lbmdlbGhhcmR0QGZhdS5kZQ0KVVJMOmh0dHBzOi8vb3JjaWQub3JnLzAwMDktMDAwMS0xNDA2LTg1MlgNCkVORDpWQ0FSRA0K"
+      download="Moritz_Engelhardt.vcf"
+      class="vcard-row"
+    >
+
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+        <circle cx="9" cy="7" r="4"/>
+        <line x1="19" y1="8" x2="19" y2="14"/>
+        <line x1="22" y1="11" x2="16" y2="11"/>
+      </svg>
+
+      Add contact
+
+    </a>
+
+
+    <!-- SOCIAL -->
+    <div class="social-row">
+
+      <a
+        href="https://www.linkedin.com/in/moritz-engelhardt-neuro/"
+        class="social-btn"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        <svg
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+          <rect x="2" y="9" width="4" height="12"/>
+          <circle cx="4" cy="4" r="2"/>
+        </svg>
+
+        LinkedIn
+
+      </a>
+
+
+      <a
+        href="https://www.researchgate.net/profile/Moritz-Engelhardt-2"
+        class="social-btn"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        <svg
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+          <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+        </svg>
+
+        ResearchGate
+
+      </a>
+
+
+      <a
+        href="https://orcid.org/0009-0001-1406-852X"
+        class="social-btn"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        <svg
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="8" x2="12" y2="12"/>
+          <line x1="12" y1="16" x2="12.01" y2="16"/>
+        </svg>
+
+        ORCID
+
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <p class="footer-note">
+      <span class="footer-event">ECRO 2026 · Paris</span><br>
+      European Chemoreception Research Organization
+    </p>
+
+    <div class="footer-links">
+
+      <a href="impressum.html">
+        Impressum
+      </a>
+
+      <span class="sep">·</span>
+
+      <a href="datenschutz.html">
+        Datenschutz
+      </a>
+
+    </div>
+
+  </footer>
+
+</div>
+
+</body>
+</html>

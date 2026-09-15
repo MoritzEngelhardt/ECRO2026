@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#185FA5">
-<meta name="description" content="ECRO 2026 poster by Moritz Engelhardt — Beyond Smell Loss">
-<title>Beyond Smell Loss · ECRO 2026</title>
+<meta name="description" content="ECRO 2026 poster, publication and Sniff It app by Moritz Engelhardt — Beyond Smell Loss">
+<title>Beyond Smell Loss · Sniff It · ECRO 2026</title>
 
 <style>
   * {
@@ -264,38 +264,84 @@
      POSTER PREVIEW
   ───────────────────────── */
 
-  .poster-preview {
-    margin: 0 12px 12px;
-    border-radius: 13px;
-    overflow: hidden;
-    background: #E9EEF4;
-    border: 1px solid var(--border);
+  
+
+  
+
+  
+
+
+  /* APP ACCESS */
+  .app-access { margin-bottom: 20px; }
+  .app-card {
     position: relative;
+    overflow: hidden;
+    background: linear-gradient(145deg, rgba(91,61,196,.08), rgba(24,95,165,.04)), var(--surface);
+    border: 1px solid rgba(91,61,196,.18);
+    border-radius: 18px;
+    padding: 17px;
+    box-shadow: 0 7px 24px rgba(20,35,58,.055);
   }
-
-  .poster-preview img {
-    display: block;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 0.707 / 1;
-    object-fit: cover;
-    object-position: top center;
-  }
-
-  .poster-overlay {
+  .app-card::after {
+    content: "";
     position: absolute;
-    left: 10px;
-    bottom: 10px;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 6px 9px;
-    border-radius: 7px;
-    background: rgba(20, 35, 58, 0.84);
-    color: #fff;
-    font-size: 9px;
-    font-weight: 650;
-    letter-spacing: 0.5px;
+    width: 130px; height: 130px;
+    border-radius: 50%;
+    right: -54px; top: -58px;
+    background: radial-gradient(circle, rgba(91,61,196,.14), transparent 70%);
+    pointer-events: none;
+  }
+  .app-eyebrow {
+    display: flex; align-items: center; gap: 7px;
+    margin-bottom: 8px;
+    font-size: 9px; font-weight: 750;
+    letter-spacing: 1.35px; text-transform: uppercase;
+    color: #5B3DC4;
+  }
+  .app-dot { width: 7px; height: 7px; border-radius: 50%; background: #5B3DC4; }
+  .app-title {
+    position: relative; z-index: 1;
+    font-size: 22px; font-weight: 680;
+    letter-spacing: -.45px; line-height: 1.15;
+    margin-bottom: 7px;
+  }
+  .app-copy {
+    position: relative; z-index: 1;
+    color: var(--text-muted);
+    font-size: 12.5px; line-height: 1.55;
+    margin-bottom: 13px;
+    max-width: 350px;
+  }
+  .app-meta {
+    position: relative; z-index: 1;
+    display: flex; flex-wrap: wrap; gap: 6px;
+    margin-bottom: 13px;
+  }
+  .app-pill {
+    display: inline-flex; align-items: center;
+    min-height: 24px; padding: 5px 8px;
+    border-radius: 999px;
+    background: rgba(91,61,196,.08);
+    color: #4A319F;
+    border: 1px solid rgba(91,61,196,.12);
+    font-size: 9.5px; font-weight: 650;
+  }
+  .app-cta {
+    position: relative; z-index: 1;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 10px; width: 100%;
+    padding: 12px 13px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #fff; background: #5B3DC4;
+    font-size: 13px; font-weight: 650;
+    box-shadow: 0 5px 14px rgba(91,61,196,.18);
+  }
+  .app-cta:active { transform: scale(.985); }
+  .app-note {
+    margin-top: 9px;
+    color: var(--text-faint);
+    font-size: 9.5px; line-height: 1.45;
   }
 
   /* ─────────────────────────
@@ -710,44 +756,40 @@
 </div>
 
     </div>
-
-
-    <!-- POSTER PREVIEW
-         Put poster-preview.jpg in the same folder.
-         If you don't want a preview, remove this entire block.
-    -->
-    <div class="poster-preview">
-
-      <img
-        src="poster-preview.jpg"
-        alt="Preview of the ECRO 2026 poster Beyond Smell Loss"
-      >
-
-      <div class="poster-overlay">
-        <svg
-          width="12"
-          height="12"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <circle cx="11" cy="11" r="7"/>
-          <path d="m20 20-4-4"/>
-        </svg>
-        Poster preview
-      </div>
-
-    </div>
-
   </section>
 
 
+
+  <!-- APP ACCESS -->
+  <section class="app-access" aria-labelledby="sniffit-title">
+    <div class="section-label">Explore the app</div>
+    <div class="app-card">
+      <div class="app-eyebrow"><span class="app-dot"></span>Sniff It · Version 1</div>
+      <h2 class="app-title" id="sniffit-title">A personal hub for smell</h2>
+      <p class="app-copy">
+        Sniff It brings olfactory training, a personal scent library,
+        everyday smell journaling, and longitudinal self-observation
+        together in one iOS app.
+      </p>
+      <div class="app-meta">
+        <span class="app-pill">iOS</span>
+        <span class="app-pill">Beta</span>
+        <span class="app-pill">Validation ongoing</span>
+        <span class="app-pill">Local-first</span>
+      </div>
+      <a href="sniffit.html" class="app-cta">
+        <span>Explore Sniff It</span><span aria-hidden="true">→</span>
+      </a>
+      <p class="app-note">
+        Version 1 is not clinically validated. Usability, adherence support,
+        Smart Scent Capture, and AI-assisted features remain under evaluation.
+      </p>
+    </div>
+  </section>
+
   <!-- RESOURCES -->
   <div class="section-label">
-    Explore the research
+    Poster & research
   </div>
 
   <div class="links">
